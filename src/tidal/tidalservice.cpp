@@ -312,7 +312,7 @@ void TidalService::StartAuthorization(const QString &client_id) {
                                        << Param(u"code_challenge_method"_s, u"S256"_s)
                                        << Param(u"redirect_uri"_s, QLatin1String(kOAuthRedirectUrl))
                                        << Param(u"client_id"_s, client_id_)
-                                       << Param(u"scope"_s, u"r_usr w_usr"_s);
+                                       << Param(u"scope"_s, u"user.read,collection.read,playlists.read,collection.write,playlists.read,playback"_s);
 
   QUrlQuery url_query;
   for (const Param &param : params) {
